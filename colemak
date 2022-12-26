@@ -157,7 +157,35 @@ xkb_symbols "cmk_ed_letters" {
 //    include "colemak(cmk_ed_dhk)"
 //// This is the old Curl(DvH) Colemak ergo mod, keeping V and M in place.
 //    include "colemak(cmk_ed_dvh)"
+        
+        
+///MY CHANGES
+        include "colemak(cmk_ed_dh_manual_angle_fix)"
 };
+
+
+
+        hidden partial alphanumeric_keys
+        xkb_symbols "cmk_ed_dh_manual_angle_fix" {
+            include "colemak(manual_angle_on_iso)"
+            include "colemak(cmk_ed_hm)"
+        };
+
+        hidden partial alphanumeric_keys
+        xkb_symbols "manual_angle_on_iso" {
+            key <AD05> { [             b,             B,  enfilledcircbullet,          Greek_beta ] }; // QWE T Cmk G
+            key <AC05> { [             g,             G,                 eng,                 ENG ] }; // QWE G Cmk D
+            
+
+            key <LSGT> { [             z,             Z,               U0292,               U01B7 ] }; // QWE Z Cmk zZ ʒƷ
+            key <AB01> { [             x,             X,              dagger,        doubledagger ] }; // QWE X Cmk xX †‡
+            key <AB02> { [             c,             C,           copyright,                cent ] }; // QWE C Cmk cC ©¢
+            key <AB03> { [             d,             D,                 eth,                 ETH ] }; // QWE G Cmk dD ðÐ
+            key <AB04> { [             v,             V,            division,         Greek_gamma ] }; // QWE V Cmk vV ÷γ
+            key <AB05>	{ [            less,          greater,      backslash,            notsign ]	};
+        };
+
+///
 
 hidden partial alphanumeric_keys
 xkb_symbols "cmk_ed_symbols" {
